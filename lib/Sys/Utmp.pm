@@ -125,6 +125,9 @@ The enum C<UtmpType> defines the constants as:
 
 =item UserProcess - record created for a user process (e.g. a login )
 
+Some systems don't define all of these, in these cases they are defined with
+a value that is never usedl
+
 An object of L<Sys::Utmp::Utemp> can be smart matched to this values to
 select for items of a certain type.
 
@@ -144,7 +147,7 @@ This returns a L<DateTime> that corresponds to C<tv>
 
 =end pod
 
-class Sys::Utmp:ver<0.0.10>:auth<github:jonathanstowe> {
+class Sys::Utmp:ver<0.0.11>:auth<github:jonathanstowe> {
 
     my constant HELPER = %?RESOURCES<libraries/utmphelper>.Str;
 
