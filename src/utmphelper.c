@@ -8,6 +8,7 @@
 #include <utmpx.h>
 #define USEXFUNCS 1
 #define _HAVE_UT_TV 1
+#define _HAVE_UT_HOST 1
 #else
 #include <stdint.h>
 #include <utmp.h>
@@ -134,7 +135,7 @@ struct utmp *getutent(void)
     }
     return &s_utmp;
 }
-
+e
 #endif
 
 struct _p_utmp {
