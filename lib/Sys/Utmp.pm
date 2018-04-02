@@ -183,7 +183,7 @@ class Sys::Utmp:ver<0.0.10>:auth<github:jonathanstowe> {
         }
 
         method gist() {
-            $!user ~ "\t" ~ $!line ~ "\t" ~ $.timestamp;
+            "{ $!user }\t{ $!line }\t{ $.timestamp }\t{ $!host }";
         }
 
         method Numeric() {
@@ -195,11 +195,6 @@ class Sys::Utmp:ver<0.0.10>:auth<github:jonathanstowe> {
         }
     }
 
-
-    sub library {
-        my $lib = 'libraries/' ~ $*VM.platform-library-name('utmphelper'.IO).Str;
-        %?RESOURCES{$lib}.Str;
-    }
 
     my sub _p_setutent() is native(HELPER) { * }
 
