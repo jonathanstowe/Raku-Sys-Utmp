@@ -146,7 +146,28 @@ This returns a L<DateTime> that corresponds to C<tv>
 
 class Sys::Utmp:ver<0.0.10>:auth<github:jonathanstowe> {
 
-    enum UtmpType is export <EmptyRecord RunLevel BootTime NewTime OldTime InitProcess LoginProcess UserProcess DeadProcess Accounting>;
+    my constant HELPER = %?RESOURCES<libraries/utmphelper>.Str;
+
+    my sub _p_ut_constant(Str $constname --> int32) is native(HELPER) { * }
+
+    my sub ut_const(Str $constname --> Int) {
+        my $const = _p_ut_constant($constname);
+        if $const < 0 {
+            die "It seems the constant $constname isn't defined";
+        }
+        $const;
+    }
+    
+    enum UtmpType is export ( EmptyRecord   => ut_const('EMPTY_RECORD'),
+                              RunLevel      => ut_const('RUN_LVL'),
+                              BootTime      => ut_const('BOOT_TIME'),
+                              NewTime       => ut_const('NEW_TIME'),
+                              OldTime       => ut_const('OLD_TIME'),
+                              InitProcess   => ut_const('INIT_PROCESS'),
+                              LoginProcess  => ut_const('LOGIN_PROCESS'),
+                              UserProcess   => ut_const('USER_PROCESS'),
+                              DeadProcess   => ut_const('DEAD_PROCESS'),
+                              Accounting    => ut_const('ACCOUNTING'));
 
     class Utent is repr('CStruct') {
         has int8 $.type;
@@ -174,7 +195,6 @@ class Sys::Utmp:ver<0.0.10>:auth<github:jonathanstowe> {
         }
     }
 
-    my constant HELPER = %?RESOURCES<libraries/utmphelper>.Str;
 
     sub library {
         my $lib = 'libraries/' ~ $*VM.platform-library-name('utmphelper'.IO).Str;
