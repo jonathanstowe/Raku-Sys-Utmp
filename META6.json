@@ -6,7 +6,7 @@
     "source": "git://github.com/jonathanstowe/p6-Sys-Utmp.git",
     "bugtracker": "https://github.com/jonathanstowe/p6-Sys-Utmp/issues"
   },
-  "perl": "6.c",
+  "perl": "6.*",
   "resources": [
     "libraries/utmphelper"
   ],

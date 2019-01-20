@@ -1,5 +1,7 @@
-use v6.c;
+use v6;
+
 use LibraryMake;
+
 use NativeCall;
 
 =begin pod
