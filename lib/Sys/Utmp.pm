@@ -183,19 +183,19 @@ class Sys::Utmp:ver<0.0.11>:auth<github:jonathanstowe> {
         has Str $.host;
         has int $.tv;
 
-        method timestamp() {
+        method timestamp( --> DateTime ) {
             DateTime.new($!tv // 0 );
         }
 
-        method gist() {
+        method gist( --> Str ) {
             "{ $!user }\t{ $!line }\t{ $.timestamp }\t{ $!host }";
         }
 
-        method Numeric() {
+        method Numeric( --> Numeric ) {
             $!type;
         }
 
-        multi method ACCEPTS(Utent:D: UtmpType $type) {
+        multi method ACCEPTS(Utent:D: UtmpType $type --> Bool ) {
             $!type == $type;
         }
     }
@@ -221,9 +221,9 @@ class Sys::Utmp:ver<0.0.11>:auth<github:jonathanstowe> {
         _p_utmpname($n);
     }
 
-    my sub _p_getutent() returns Utent is native(HELPER) { * }
+    my sub _p_getutent( --> Utent ) is native(HELPER) { * }
 
-    method getutent() returns Utent {
+    method getutent( --> Utent ) {
         _p_getutent();
     }
 
