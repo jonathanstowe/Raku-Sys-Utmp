@@ -149,7 +149,7 @@ This returns a L<DateTime> that corresponds to C<tv>
 
 =end pod
 
-class Sys::Utmp:ver<0.0.11>:auth<github:jonathanstowe> {
+class Sys::Utmp:ver<0.0.12>:auth<github:jonathanstowe>:api<1.0> {
 
     my constant HELPER = %?RESOURCES<libraries/utmphelper>.Str;
 
