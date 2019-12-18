@@ -1,6 +1,6 @@
 # Sys::Utmp
 
-Perl 6 access to Utmp entries on Unix-like systems.
+Raku access to Utmp entries on Unix-like systems.
 
 ## Description
 
@@ -12,7 +12,7 @@ It will prefer to use the getutent() function from the system C library
 if it is available but will attempt to provide its own if the OS doesn't
 have that. Because the implementation of getutent() differs between
 various OS and the C part of this module needs to provide a consistent
-interface to Perl it may not represent all the data that is available on
+interface to Raku it may not represent all the data that is available on
 a particular system, similarly there may be documented attributes that
 are not captured on some OS.
 
@@ -20,14 +20,14 @@ are not captured on some OS.
 
 Because the various Unix-like systems have varying implementations of the
 utmp facility this uses a small shared library written in C to provide a
-consistent interface to the Perl library, this means that you will require
+consistent interface to the Raku library, this means that you will require
 a working C compiler environment to be able to install this module.
 
 It is entirely possible that the assumptions that I have made in the C
 part aren't correct for your system and that this will not install or
 work properly, if this is the case please see the "Support" section below.
 
-Assuming you have a working Rakudo Perl 6 installation you should be able to
+Assuming you have a working Rakudo installation you should be able to
 install this with *zef* :
 
     # From the source directory
@@ -42,7 +42,7 @@ install this with *zef* :
 
 Suggestions/patches are welcomed via github at:
 
-https://github.com/jonathanstowe/Sys-Utmp/issues
+https://github.com/jonathanstowe/Raku-Sys-Utmp/issues
 
 I'm not able to test on a wide variety of platforms so any help there would be 
 appreciated. Also the assumptions in the C library are based on those used

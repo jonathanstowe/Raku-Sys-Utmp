@@ -38,7 +38,7 @@ It will prefer to use the getutent() function from the system C library
 if it is available but will attempt to provide its own if the OS doesn't
 have that. Because the implementation of getutent() differs between
 various OS and the C part of this module needs to provide a consistent
-interface to Perl it may not represent all the data that is available on
+interface to Raku it may not represent all the data that is available on
 a particular system, similarly there may be documented attributes that
 are not captured on some OS.
 
@@ -149,7 +149,7 @@ This returns a L<DateTime> that corresponds to C<tv>
 
 =end pod
 
-class Sys::Utmp:ver<0.0.12>:auth<github:jonathanstowe>:api<1.0> {
+class Sys::Utmp:ver<0.0.13>:auth<github:jonathanstowe>:api<1.0> {
 
     my constant HELPER = %?RESOURCES<libraries/utmphelper>.Str;
 
