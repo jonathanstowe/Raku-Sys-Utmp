@@ -1,7 +1,5 @@
 use v6;
 
-use LibraryMake;
-
 use NativeCall;
 
 =begin pod
@@ -69,7 +67,7 @@ location.
 
 =head2 method list
 
-This will return the list of L<Sys::Utmp::Utent|#Sys::Utmp::Utent> 
+This will return the list of L<Sys::Utmp::Utent|#Sys::Utmp::Utent>
 objects that would be obtained if C<getutent> was called repeatedly but
 is somewhat lazy if all the records aren't required.
 
@@ -82,7 +80,7 @@ is somewhat lazy if all the records aren't required.
 
 Returns the use this record was created for if this is a record for a user
 process.  Some systems may return other information depending on the record
-type.  If no user was set this will be the empty string. 
+type.  If no user was set this will be the empty string.
 
 =head2  id
 
@@ -135,9 +133,9 @@ select for items of a certain type.
 
 =head2 host
 
-On systems which support this the method will return the hostname of the 
+On systems which support this the method will return the hostname of the
 host for which the process that created the record was started - for example
-for a telnet login.  
+for a telnet login.
 
 =head2 tv
 
@@ -149,7 +147,7 @@ This returns a L<DateTime> that corresponds to C<tv>
 
 =end pod
 
-class Sys::Utmp:ver<0.0.13>:auth<github:jonathanstowe>:api<1.0> {
+class Sys::Utmp:ver<0.1.0>:auth<github:jonathanstowe>:api<1.0> {
 
     my constant HELPER = %?RESOURCES<libraries/utmphelper>.Str;
 
@@ -162,7 +160,7 @@ class Sys::Utmp:ver<0.0.13>:auth<github:jonathanstowe>:api<1.0> {
         }
         $const;
     }
-    
+
     enum UtmpType is export ( EmptyRecord   => ut_const('EMPTY_RECORD'),
                               RunLevel      => ut_const('RUN_LVL'),
                               BootTime      => ut_const('BOOT_TIME'),

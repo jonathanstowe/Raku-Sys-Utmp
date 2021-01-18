@@ -1,3 +1,6 @@
+v0.1.0		Mon 18 Jan 16:54:18 GMT 2021
+	* Switch to use Distribution::Builder::MakeFromJSON
+	* Spring clean
 v0.0.13		Wed 18 Dec 08:57:56 GMT 2019
 	* Raku renaming
 v0.0.12		Sun 20 Jan 20:41:47 GMT 2019
@@ -12,9 +15,6 @@ v0.0.8		Sat Mar 12 11:17:50 2016 +0000
 	* Remove version literal
 v0.0.7		Fri Dec 25 17:48:05 2015 +0000 
 	* Update for 6.c
-		 
 	* Update build and library discovery for post @*INC world
-		 
 	* done -> done-testing
-		 
 	* Add ver/auth to class Add vim modeline

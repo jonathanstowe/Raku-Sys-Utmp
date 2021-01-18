@@ -86,7 +86,7 @@ extern void setutent(void)
 {
     if (ut_fd < 0)
     {
-       if ((ut_fd = open(_ut_name, O_RDONLY)) < 0) 
+       if ((ut_fd = open(_ut_name, O_RDONLY)) < 0)
        {
             printf("Can't open %s",_ut_name);
             exit(0);
@@ -106,7 +106,7 @@ extern void endutent(void)
     ut_fd = -1;
 }
 
-struct utmp *getutent(void) 
+struct utmp *getutent(void)
 {
     static struct utmp s_utmp;
     int readval;
@@ -122,12 +122,12 @@ struct utmp *getutent(void)
         {
             return NULL;
         }
-        else if (readval < 0) 
+        else if (readval < 0)
         {
             printf("Error reading %s", _ut_name);
             exit(0);
-        } 
-        else 
+        }
+        else
         {
             printf("Partial record in %s [%d bytes]", _ut_name, readval );
             exit(0);
@@ -190,7 +190,7 @@ extern int _p_ut_constant(char *constname) {
         else if ( strncmp(constname, "ACC", 3) == 0 ) {
 #ifdef ACCOUNTING
             ret = ACCOUNTING;
-#else 
+#else
             ret = UT_TYPE_NOT_DEFINED_HERE;
 #endif
         }
@@ -200,7 +200,6 @@ extern int _p_ut_constant(char *constname) {
 
 extern struct _p_utmp *_p_getutent(void)
 {
-     static char *_ut_id;
 #ifdef USEXFUNCS
      static struct utmpx *utent;
 #else
@@ -237,7 +236,7 @@ extern struct _p_utmp *_p_getutent(void)
        fixed_utent.ut_type = utent->ut_type;
 #endif
 #ifdef _NO_UT_PID
-       fixed_utent.ut_pid = -1; 
+       fixed_utent.ut_pid = -1;
 #else
        fixed_utent.ut_pid = utent->ut_pid;
 #endif
