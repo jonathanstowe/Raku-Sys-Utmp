@@ -22,6 +22,12 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
+    - name: Apt Update
+      run: apt update
+
+    - name: Install GDBM development package and build tools
+      run: apt install -y build-essential
+
     - name: Raku version
       run: raku -v
 
@@ -29,7 +35,7 @@ jobs:
       run: zef install --deps-only --/test --test-depends .
 
     - name: Build the helper
-      run: zef build .
+      run: zef build -v --debug .
       
     - name: Run tests
       run: zef test -v --debug .
