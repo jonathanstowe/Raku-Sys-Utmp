@@ -2,6 +2,8 @@
 
 Raku access to Utmp entries on Unix-like systems.
 
+![Build Status](https://github.com/jonathanstowe/Raku-Sys-Utmp/workflows/CI/badge.svg)
+
 ## Description
 
 Sys::Utmp provides access to the Unix user accounting data that may be
