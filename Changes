@@ -1,3 +1,5 @@
+v0.1.1	Sun  7 Aug 09:48:47 BST 2022
+	* Upload to zef repository
 v0.1.0		Mon 18 Jan 16:54:18 GMT 2021
 	* Switch to use Distribution::Builder::MakeFromJSON
 	* Spring clean
@@ -18,3 +20,4 @@ v0.0.7		Fri Dec 25 17:48:05 2015 +0000
 	* Update build and library discovery for post @*INC world
 	* done -> done-testing
 	* Add ver/auth to class Add vim modeline
+

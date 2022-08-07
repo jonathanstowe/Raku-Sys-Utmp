@@ -1,50 +1,46 @@
 {
-  "name": "Sys::Utmp",
-  "version": "0.1.0",
-  "auth": "github:jonathanstowe",
-  "api": "1.0",
-  "description": "Raku access to Utmp entries on Unix-like systems",
-  "source-url": "git://github.com/jonathanstowe/Raku-Sys-Utmp.git",
-  "support": {
-    "irc": "irc:// irc.freenode.net/#perl6",
-    "source": "git://github.com/jonathanstowe/Raku-Sys-Utmp.git",
-    "bugtracker": "https://github.com/jonathanstowe/Raku-Sys-Utmp/issues"
-  },
-  "perl": "6.*",
-  "raku": "6.*",
-  "resources": [
-    "libraries/utmphelper"
-  ],
-  "author": "Jonathan Stowe <jns+git@gellyfish.co.uk>",
   "tags": [
     "unix",
     "users",
     "utility"
   ],
+  "author": "Jonathan Stowe <jns+git@gellyfish.co.uk>",
+  "description": "Raku access to Utmp entries on Unix-like systems",
+  "version": "0.1.1",
+  "raku": "6.*",
+  "meta-version": "1",
   "license": "Artistic-2.0",
-  "provides": {
-    "Sys::Utmp": "lib/Sys/Utmp.pm"
-  },
-  "depends": {
-     "build" : {
-        "requires" : [
-           "Distribution::Builder::MakeFromJSON:ver<0.6+>"
-        ]
-     },
-     "runtime": {
-        "requires": [
-        ]
-     }
-  },
-  "builder": "Distribution::Builder::MakeFromJSON",
-  "build" : {
-     "src-dir" : "src",
-     "makefile-variables" : {
-        "utmphelper": {"resource": "libraries/utmphelper"}
-     }
-  },
+  "build-depends": [
+  ],
   "authors": [
     "Jonathan Stowe <jns+git@gellyfish.co.uk>"
   ],
-  "meta-version": "1"
+  "resources": [
+    "libraries/utmphelper"
+  ],
+  "api": "1.0",
+  "source-url": "git://github.com/jonathanstowe/Raku-Sys-Utmp.git",
+  "auth": "zef:jonathanstowe",
+  "support": {
+    "irc": "irc:// irc.freenode.net/#perl6",
+    "bugtracker": "https://github.com/jonathanstowe/Raku-Sys-Utmp/issues",
+    "source": "git://github.com/jonathanstowe/Raku-Sys-Utmp.git"
+  },
+  "depends": {
+    "runtime": {
+      "requires": [
+      ]
+    },
+    "build": {
+      "requires": [
+        "Distribution::Builder::MakeFromJSON:ver<0.6+>"
+      ]
+    }
+  },
+  "provides": {
+    "Sys::Utmp": "lib/Sys/Utmp.pm"
+  },
+  "test-depends": [
+  ],
+  "name": "Sys::Utmp"
 }
