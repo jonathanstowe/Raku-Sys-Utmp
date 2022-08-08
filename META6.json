@@ -6,12 +6,10 @@
   ],
   "author": "Jonathan Stowe <jns+git@gellyfish.co.uk>",
   "description": "Raku access to Utmp entries on Unix-like systems",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "raku": "6.*",
   "meta-version": "1",
   "license": "Artistic-2.0",
-  "build-depends": [
-  ],
   "authors": [
     "Jonathan Stowe <jns+git@gellyfish.co.uk>"
   ],
@@ -37,10 +35,15 @@
       ]
     }
   },
+  "builder": "Distribution::Builder::MakeFromJSON",
+  "build" : {
+     "src-dir" : "src",
+     "makefile-variables" : {
+        "utmphelper": {"resource": "libraries/utmphelper"}
+     }
+  },
   "provides": {
     "Sys::Utmp": "lib/Sys/Utmp.pm"
   },
-  "test-depends": [
-  ],
   "name": "Sys::Utmp"
 }
