@@ -40,7 +40,7 @@
         {
           "children": [
             {
-              "name": "Utmp.pm",
+              "name": "Utmp.rakumod",
               "type": "file"
             }
           ],
